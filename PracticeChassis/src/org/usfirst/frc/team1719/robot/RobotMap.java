@@ -25,16 +25,12 @@ public class RobotMap {
 	public static SpeedController driveBack;
 	
 	//Pneumatics
-	public static Compressor pneumaticsCompressor;
-	public static Solenoid shifterSolenoidLeft;
-	public static Solenoid shifterSolenoidRight;
+	
 	
 	public static void init(){
 		driveFront = new Talon(0);
 		driveBack = new Talon(1);
 		
-		pneumaticsCompressor = new Compressor(0);
-		shifterSolenoidLeft = new Solenoid(0);
-		shifterSolenoidRight = new Solenoid(1);
+		
 	}
 }
