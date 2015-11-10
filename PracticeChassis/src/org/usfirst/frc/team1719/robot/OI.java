@@ -1,6 +1,11 @@
 package org.usfirst.frc.team1719.robot;
 
+import org.usfirst.frc.team1719.robot.commands.DisengageShifters;
+import org.usfirst.frc.team1719.robot.commands.EngageShifters;
+
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -85,12 +90,15 @@ public class OI {
 		
 		//Non hardware bindings
 		//TODO INCORRECT PORTS
-		final static int DRIVER_RIGHT = 0;
-		final static int DRIVER_LEFT = 1;
+		final static int DRIVER_RIGHT = 1;
+		final static int DRIVER_LEFT = 5;
 	    private static Joystick driverController;
-		
+		private Button shifterControl;
 		public OI(){
 			driverController = new Joystick(0);
+			shifterControl = new JoystickButton(driverController,RIGHT_BUMPER);
+			shifterControl.whenPressed(new EngageShifters());
+			shifterControl.whenReleased(new DisengageShifters());
 		}
 		
 		public static double getDriveRight(){

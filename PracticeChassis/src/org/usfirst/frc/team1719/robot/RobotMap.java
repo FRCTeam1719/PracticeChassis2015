@@ -1,5 +1,7 @@
 package org.usfirst.frc.team1719.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 
@@ -23,13 +25,16 @@ public class RobotMap {
 	public static SpeedController backMotors;
 	
 	//Pneumatics
-	
-	
+	public static Compressor compressor;
+	public static Solenoid leftShifter;
+	public static Solenoid rightShifter;
 	public static void init(){
 		//Note: Possibility of these becoming victors
 		frontMotors = new Talon(0);
 		backMotors = new Talon(1);
 		
-		
+		compressor = new Compressor();
+		leftShifter = new Solenoid(0);
+		rightShifter = new Solenoid(1);
 	}
 }
