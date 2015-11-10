@@ -1,7 +1,5 @@
 package org.usfirst.frc.team1719.robot;
 
-import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 
@@ -21,15 +19,16 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-	public static SpeedController driveFront;
-	public static SpeedController driveBack;
+	public static SpeedController frontMotors;
+	public static SpeedController backMotors;
 	
 	//Pneumatics
 	
 	
 	public static void init(){
-		driveFront = new Talon(0);
-		driveBack = new Talon(1);
+		//Note: Possibility of these becoming victors
+		frontMotors = new Talon(0);
+		backMotors = new Talon(1);
 		
 		
 	}

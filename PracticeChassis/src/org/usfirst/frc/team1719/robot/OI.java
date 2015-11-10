@@ -82,15 +82,24 @@ public class OI {
 		final int WINGMAN_BUTTON_6 = 6;
 		final int WINGMAN_BUTTON_7 = 7;
 		
-	    private Joystick driverController;
+		
+		//Non hardware bindings
+		//TODO INCORRECT PORTS
+		final static int DRIVER_RIGHT = 0;
+		final static int DRIVER_LEFT = 1;
+	    private static Joystick driverController;
 		
 		public OI(){
 			driverController = new Joystick(0);
 		}
 		
-		public Joystick getDriverJoystick(){
-			return driverController;
+		public static double getDriveRight(){
+			return driverController.getRawAxis(DRIVER_RIGHT);
 		}
+		public static double getDriveLeft(){
+			return driverController.getRawAxis(DRIVER_LEFT);
+		}
+		
 	
 }
 
