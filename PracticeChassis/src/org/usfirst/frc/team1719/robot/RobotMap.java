@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1719.robot;
 
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 
@@ -22,6 +23,7 @@ public class RobotMap {
 	public static SpeedController frontMotors;
 	public static SpeedController backMotors;
 	
+	public static Servo shifterServo;
 	//Pneumatics
 	
 	
@@ -30,6 +32,6 @@ public class RobotMap {
 		frontMotors = new Talon(0);
 		backMotors = new Talon(1);
 		
-		
+		shifterServo = new Servo(0);
 	}
 }
